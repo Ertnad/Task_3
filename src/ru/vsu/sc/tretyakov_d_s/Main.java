@@ -1,11 +1,14 @@
 package ru.vsu.sc.tretyakov_d_s;
 
+
 import java.awt.geom.Point2D;
 import java.util.Locale;
 import java.util.Scanner;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 import ru.vsu.sc.tretyakov_d_s.Figures.Line;
+import ru.vsu.sc.tretyakov_d_s.Figures.Point;
 import ru.vsu.sc.tretyakov_d_s.Figures.Rectangle;
+import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
 
 public class Main {
 
@@ -35,17 +38,35 @@ public class Main {
     }
 
     private static void testPoints(Coloring picture) {
-        System.out.println("Checking the correct coloring of the zones in pre-selected points");
-        System.out.printf("(1.00, 1.00) -> ORANGE is %s%n", picture.getColor(1, 1));
-        System.out.printf("(2.00, -1.00) -> ORANGE is %s%n", picture.getColor(2, -1));
-        System.out.printf("(1.00, 3.00) -> YELLOW is %s%n", picture.getColor(1, 3));
-        System.out.printf("(-3.00, -3.00) -> YELLOW is %s%n", picture.getColor(-3, -3));
-        System.out.printf("(8.00, 0.00) -> GREEN is %s%n", picture.getColor(8, 0));
-        System.out.printf("(3.00, -3.00) -> WHITE is %s%n", picture.getColor(3, -3));
-        System.out.println("Checking the correct coloring of the zone at an arbitrary point ");
+
+        Point[] pointsArr = {new Point(1, 1), new Point(2, -1), new Point(-1, 3),
+            new Point(-3, -3), new Point(8, 0), new Point(3, -3)};
+
+        SimpleColor[] correctResultsArr = {SimpleColor.ORANGE, SimpleColor.ORANGE,
+            SimpleColor.YELLOW, SimpleColor.YELLOW, SimpleColor.GREEN, SimpleColor.WHITE};
+
+        System.out.println("Checking predefined points");
+
+        for (int i = 0; i < pointsArr.length; i++) {
+            SimpleColor currentResult = picture.getColor(pointsArr[i].x, pointsArr[i].y);
+            SimpleColor correctResult = correctResultsArr[i];
+
+            if (currentResult == correctResult) {
+                printTest(currentResult, correctResult, "correct");
+            } else {
+                printTest(currentResult, correctResult, "incorrect");
+                System.out.println("Error. The last result is incorrect");
+                System.exit(1);
+            }
+        }
+        System.out.println("All test is correct. Now check the random point");
     }
 
-
+    private static void printTest(SimpleColor currentResult,
+        SimpleColor correctResult, String testResult) {
+        System.out.printf("Test result is %s: %s is %s \n",
+            testResult, currentResult, correctResult);
+    }
 }
 
 
