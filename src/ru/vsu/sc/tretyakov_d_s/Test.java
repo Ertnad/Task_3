@@ -18,13 +18,13 @@ class Test {
     System.out.println("Checking predefined points");
 
     for (int i = 0; i < pointsArr.length; i++) {
-      SimpleColor currentResult = picture.getColor(pointsArr[i].x, pointsArr[i].y);
+      SimpleColor testResult = picture.getColor(pointsArr[i].x, pointsArr[i].y);
       SimpleColor correctResult = correctResultsArr[i];
 
-      if (currentResult == correctResult) {
-        printTest(currentResult, correctResult, "correct");
+      if (testResult == correctResult) {
+        printTest(testResult, correctResult, "correct");
       } else {
-        printTest(currentResult, correctResult, "incorrect");
+        printTest(testResult, correctResult, "incorrect");
         System.out.println("Error. The last result is incorrect");
         System.exit(1);
       }

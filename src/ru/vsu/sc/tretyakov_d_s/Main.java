@@ -3,7 +3,6 @@ package ru.vsu.sc.tretyakov_d_s;
 
 import static ru.vsu.sc.tretyakov_d_s.Test.testPoints;
 import java.awt.geom.Point2D;
-import java.util.Locale;
 import java.util.Scanner;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 import ru.vsu.sc.tretyakov_d_s.Figures.Rectangle;
@@ -13,7 +12,6 @@ import ru.vsu.sc.tretyakov_d_s.Figures.VerticalParabola;
 public class Main {
 
     public static void main(String[] args) {
-        Locale.setDefault(Locale.ROOT);
 
         Coloring picture = new Coloring(new VerticalParabola(6, -5, 0.125),
             new Rectangle(new Point2D.Double(-5, 0), new Point2D.Double(4, 7)),
@@ -28,7 +26,7 @@ public class Main {
     }
 
     private static void printColorForPoint(double x, double y, Coloring picture) {
-        System.out.printf("(%.2f, %.2f) -> %s%n", x, y, picture.getColor(x, y));
+        System.out.printf("(%.2f, %.2f) -> %s", x, y, picture.getColor(x, y));
     }
 
     private static double readPoint(String name) {
