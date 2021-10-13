@@ -1,12 +1,10 @@
 package ru.vsu.sc.tretyakov_d_s;
 
 
-import static ru.vsu.sc.tretyakov_d_s.Test.testPoints;
 import java.awt.geom.Point2D;
 import java.util.Scanner;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 import ru.vsu.sc.tretyakov_d_s.Figures.Rectangle;
-import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
 import ru.vsu.sc.tretyakov_d_s.Figures.VerticalParabola;
 
 public class Main {
@@ -17,7 +15,7 @@ public class Main {
             new Rectangle(new Point2D.Double(-5, 0), new Point2D.Double(4, 7)),
             new Rectangle(new Point2D.Double(-4, 1), new Point2D.Double(2, 4)));
 
-        testPoints(picture);
+        Test.testPoints(picture);
 
         double x = readPoint("X");
         double y = readPoint("Y");
@@ -35,11 +33,6 @@ public class Main {
         return scanner.nextDouble();
     }
 
-    public static void printTest(SimpleColor currentResult,
-        SimpleColor correctResult, String testResult) {
-        System.out.printf("Test result is %s: %s is %s \n",
-            testResult, currentResult, correctResult);
-    }
 }
 
 

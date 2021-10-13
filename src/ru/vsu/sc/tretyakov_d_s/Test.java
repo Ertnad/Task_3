@@ -1,11 +1,10 @@
 package ru.vsu.sc.tretyakov_d_s;
 
-import static ru.vsu.sc.tretyakov_d_s.Main.printTest;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 import ru.vsu.sc.tretyakov_d_s.Figures.Point;
 import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
 
-class Test {
+public class Test {
 
   public static void testPoints(Coloring picture) {
 
@@ -22,9 +21,10 @@ class Test {
       SimpleColor correctResult = correctResultsArr[i];
 
       if (testResult == correctResult) {
-        printTest(testResult, correctResult, "correct");
+        System.out.printf("Test result is %s: %s is %s \n",
+            testResult, correctResult, "correct");
       } else {
-        printTest(testResult, correctResult, "incorrect");
+        System.out.printf("Test result is %s: %s is %s \n", testResult, correctResult, "incorrect");
         System.out.println("Error. The last result is incorrect");
         System.exit(1);
       }
