@@ -2,27 +2,27 @@ package ru.vsu.sc.tretyakov_d_s.Figures;
 
 public class Coloring {
 
-  private final Line verticalLine1;
-  private final Line verticalLine2;
-  private final Rectangle rectangle;
+  private final VerticalParabola verticaParabola;
+  private final Rectangle largeRectangle;
+  private final Rectangle smallRectangle;
 
-  public Coloring(Line verticalLine1, Line verticalLine2,
-      Rectangle rectangle) {
-    this.verticalLine1 = verticalLine1;
-    this.verticalLine2 = verticalLine2;
-    this.rectangle = rectangle;
+  public Coloring(VerticalParabola verticaParabola, Rectangle largeRectangle,
+      Rectangle smallRectangle) {
+    this.verticaParabola = verticaParabola;
+    this.largeRectangle = largeRectangle;
+    this.smallRectangle = smallRectangle;
   }
 
   public SimpleColor getColor(double x, double y) {
-    if (rectangle.isPointInsideRectangle(x, y))
-      return SimpleColor.ORANGE;
-
-    else if (!verticalLine2.isPointAbove(x, y))
+    if (verticaParabola.isPointAbove(x, y) && !smallRectangle.isPointInsideRectangle(x, y))
       return SimpleColor.GREEN;
 
-    else if (verticalLine1.isPointAbove(x, y))
+    else if (largeRectangle.isPointInsideRectangle(x, y) && !verticaParabola.isPointAbove(x, y) && !smallRectangle.isPointInsideRectangle(x, y))
+      return SimpleColor.ORANGE;
+
+    else if (!verticaParabola.isPointAbove(x, y) && smallRectangle.isPointInsideRectangle(x, y))
       return SimpleColor.YELLOW;
 
-    else return SimpleColor.WHITE;
+    else return SimpleColor.GREY;
   }
 }

@@ -6,18 +6,18 @@ import java.awt.geom.Point2D;
 import java.util.Locale;
 import java.util.Scanner;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
-import ru.vsu.sc.tretyakov_d_s.Figures.Line;
 import ru.vsu.sc.tretyakov_d_s.Figures.Rectangle;
 import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
+import ru.vsu.sc.tretyakov_d_s.Figures.VerticalParabola;
 
 public class Main {
 
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
 
-        Coloring picture = new Coloring(new Line(4, 0.4, 0.6),
-            new Line(7, 0, 1),
-            new Rectangle(new Point2D.Double(-3, -2), new Point2D.Double(3, 2)));
+        Coloring picture = new Coloring(new VerticalParabola(6, -5, 0.125),
+            new Rectangle(new Point2D.Double(-5, 0), new Point2D.Double(4, 7)),
+            new Rectangle(new Point2D.Double(-4, 1), new Point2D.Double(2, 4)));
 
         testPoints(picture);
 

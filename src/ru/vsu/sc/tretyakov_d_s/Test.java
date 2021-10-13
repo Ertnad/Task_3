@@ -9,11 +9,11 @@ class Test {
 
   public static void testPoints(Coloring picture) {
 
-    Point[] pointsArr = {new Point(1, 1), new Point(2, -1), new Point(-1, 3),
-        new Point(-3, -3), new Point(8, 0), new Point(3, -3)};
+    Point[] pointsArr = {new Point(0, 5), new Point(-4, 5), new Point(1, 3),
+        new Point(3, -3), new Point(-3, 2)};
 
-    SimpleColor[] correctResultsArr = {SimpleColor.ORANGE, SimpleColor.ORANGE,
-        SimpleColor.YELLOW, SimpleColor.YELLOW, SimpleColor.GREEN, SimpleColor.WHITE};
+    SimpleColor[] correctResultsArr = {SimpleColor.GREEN, SimpleColor.ORANGE,
+        SimpleColor.GREY, SimpleColor.GREEN, SimpleColor.YELLOW};
 
     System.out.println("Checking predefined points");
 
