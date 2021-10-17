@@ -1,10 +1,7 @@
 package ru.vsu.sc.tretyakov_d_s;
 
-
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
-
-
 
 public class Test {
 

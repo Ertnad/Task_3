@@ -1,9 +1,7 @@
 package ru.vsu.sc.tretyakov_d_s;
 
-
 import java.util.Scanner;
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
-
 
 public class Main {
 
@@ -16,6 +14,7 @@ public class Main {
 
         double x = readPoint("X");
         double y = readPoint("Y");
+
         printColorForPoint(x, y);
 
     }
@@ -40,16 +39,9 @@ public class Main {
         System.out.println("Starting testing the program for errors.");
         if (!test.testPoints()) {
             System.out.println("An error in the test was detected.");
-            System.exit(1);
-        } else {
-            System.out.println("All tests completed. The program works properly");
-        }
+            System.exit(1);}
+        else {
+            System.out.println("All tests completed. The program works properly"); }
         System.out.println("===================================================================");
     }
 }
-
-
-
-
-
-
