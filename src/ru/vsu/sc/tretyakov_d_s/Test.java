@@ -1,35 +1,35 @@
 package ru.vsu.sc.tretyakov_d_s;
 
+
 import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
-import ru.vsu.sc.tretyakov_d_s.Figures.Point;
 import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
+
+
 
 public class Test {
 
-  public static void testPoints(Coloring picture) {
+  private static final Coloring picture = new Coloring();
 
-    Point[] pointsArr = {new Point(0, 5), new Point(-4, 5), new Point(1, 3),
-        new Point(3, -3), new Point(-3, 2)};
-
-    SimpleColor[] correctResultsArr = {SimpleColor.GREEN, SimpleColor.ORANGE,
-        SimpleColor.GREY, SimpleColor.GREEN, SimpleColor.YELLOW};
-
-    System.out.println("Checking predefined points");
-
-    for (int i = 0; i < pointsArr.length; i++) {
-      SimpleColor testResult = picture.getColor(pointsArr[i].x, pointsArr[i].y);
-      SimpleColor correctResult = correctResultsArr[i];
-
-      if (testResult == correctResult) {
-        System.out.printf("Test result is %s: %s is %s \n",
-            testResult, correctResult, "correct");
-      } else {
-        System.out.printf("Test result is %s: %s is %s \n", testResult, correctResult, "incorrect");
-        System.out.println("Error. The last result is incorrect");
-        System.exit(1);
-      }
+  public boolean testPoints() {
+    if (picture.getColor(0, 5) != SimpleColor.GREEN) {
+      System.out.println("Test 1 is incorrect");
+      return false;
+    } else if (picture.getColor(-4, 5) != SimpleColor.ORANGE) {
+      System.out.println("Test 2 is incorrect");
+      return false;
+    } else if (picture.getColor(1, 3) != SimpleColor.GREY) {
+      System.out.println("Test 3 is incorrect");
+      return false;
+    } else if (picture.getColor(3, -3) != SimpleColor.GREEN) {
+      System.out.println("Test 4 is incorrect");
+      return false;
+    } else if (picture.getColor(-3, 2) != SimpleColor.YELLOW) {
+      System.out.println("Test 5 is incorrect");
+      return false;
+    } else {
+      return true;
     }
-    System.out.println("All test is correct. Now check the random point");
   }
 }
+
 
