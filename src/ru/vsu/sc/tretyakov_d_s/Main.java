@@ -10,7 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        resultTest();
+        if (test.testPoints()) {
+            System.out.println("All tests completed. The program works properly");}
+        else {
+            System.out.println("An error in the test was detected.");
+        return;}
 
         double x = readPoint("X");
         double y = readPoint("Y");
@@ -32,16 +36,5 @@ public class Main {
             System.out.print("All points must be between 0 and 10");
             System.exit(1); }
         return point;
-    }
-
-    static void resultTest() {
-        System.out.println("===================================================================");
-        System.out.println("Starting testing the program for errors.");
-        if (!test.testPoints()) {
-            System.out.println("An error in the test was detected.");
-            System.exit(1);}
-        else {
-            System.out.println("All tests completed. The program works properly"); }
-        System.out.println("===================================================================");
     }
 }
