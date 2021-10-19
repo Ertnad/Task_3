@@ -7,7 +7,7 @@ public class Test {
 
   private static final Coloring picture = new Coloring();
 
-  public boolean testPoints() {
+  boolean testPoints() {
     if (picture.getColor(0, 5) != SimpleColor.GREEN) {
       System.out.println("Test 1 is incorrect");
       return false;
