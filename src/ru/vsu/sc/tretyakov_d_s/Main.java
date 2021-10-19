@@ -5,8 +5,8 @@ import ru.vsu.sc.tretyakov_d_s.Figures.Coloring;
 
 public class Main {
 
-    private static final Coloring picture = new Coloring();
-    private static final Test test = new Test();
+    static final Coloring picture = new Coloring();
+    static final Test test = new Test();
 
     public static void main(String[] args) {
 
@@ -19,11 +19,11 @@ public class Main {
 
     }
 
-    private static void printColorForPoint(double x, double y) {
+    static void printColorForPoint(double x, double y) {
         System.out.printf("(%.2f, %.2f) -> %s", x, y, picture.getColor(x, y));
     }
 
-    private static double readPoint(String name) {
+    static double readPoint(String name) {
         System.out.printf("Enter the %s point ", name);
         Scanner scanner = new Scanner(System.in);
         double point = scanner.nextDouble();
@@ -34,7 +34,7 @@ public class Main {
         return point;
     }
 
-    private static void resultTest() {
+    static void resultTest() {
         System.out.println("===================================================================");
         System.out.println("Starting testing the program for errors.");
         if (!test.testPoints()) {
