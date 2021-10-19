@@ -11,13 +11,13 @@ public class Main {
     public static void main(String[] args) {
 
         if (test.testPoints()) {
-            System.out.println("All tests completed. The program works properly");}
+            System.out.println("All tests completed. The program works properly");
 
-        double x = readPoint("X");
-        double y = readPoint("Y");
+            double x = readPoint("X");
+            double y = readPoint("Y");
 
-        printColorForPoint(x, y);
-
+            printColorForPoint(x, y);
+        }
     }
 
     static void printColorForPoint(double x, double y) {
