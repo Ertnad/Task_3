@@ -12,9 +12,6 @@ public class Main {
 
         if (test.testPoints()) {
             System.out.println("All tests completed. The program works properly");}
-        else {
-            System.out.println("An error in the test was detected.");
-        return;}
 
         double x = readPoint("X");
         double y = readPoint("Y");
