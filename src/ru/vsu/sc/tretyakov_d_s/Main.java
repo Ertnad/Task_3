@@ -12,7 +12,7 @@ public class Main {
 
         if (test.testPoints()) {
             System.out.println("All tests completed. The program works properly");
-
+            
             double x = readPoint("X");
             double y = readPoint("Y");
 
