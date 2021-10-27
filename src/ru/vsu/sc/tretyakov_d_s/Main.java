@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if (Test.testPoints()) {
+        if (Test.testPoints(coloring)) {
             System.out.println("All tests completed. The program works properly");
 
             double x = readPoint("X");
