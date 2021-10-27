@@ -15,7 +15,7 @@ public class Main {
     private static final Rectangle smallRectangle =
         new Rectangle(new Point2D.Double(-4, 1), new Point2D.Double(2, 4));
 
-    public static Coloring coloring = new Coloring(verticalParabola, largeRectangle, smallRectangle);
+    public static final Coloring coloring = new Coloring(verticalParabola, largeRectangle, smallRectangle);
 
 
     public static void main(String[] args) {
