@@ -5,7 +5,6 @@ import ru.vsu.sc.tretyakov_d_s.Figures.SimpleColor;
 
 public class Test {
 
-  public static boolean testingCorrectness = testPoints();
 
   static  boolean testPoints() {
     if (Main.coloring.getColor(0, 5) != SimpleColor.GREEN) {

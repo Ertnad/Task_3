@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if (Test.testingCorrectness) {
+        if (Test.testPoints()) {
             System.out.println("All tests completed. The program works properly");
 
             double x = readPoint("X");
